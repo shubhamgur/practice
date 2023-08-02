@@ -5,6 +5,12 @@ const blogSchema = new Schema({
   name: String, // String is shorthand for {type: String}
   email: String,
   about: String,
+  image:String,
+  username:{
+    type:String,
+    unique:true,
+  },
+  password:String,
   date: { type: Date, default: Date.now },
 });
 

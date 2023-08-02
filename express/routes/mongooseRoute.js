@@ -1,8 +1,11 @@
 const express=require('express');
 const routes=express.Router();
-const {getmetod,savemethod,editeData,deletemetod,getbyid,addmulit}=require('../repository/monmetod')
+const {getmetod,savemethod,editeData,deletemetod,getbyid,addmulit}=require('../repository/monmetod');
+const {routeslevel,singleRout,pathrout}=require('../middlerwares/basicMiddl')
+const {virify}=require('../middlerwares/authmiddlerwares')
 
-routes.get('/',async(req,res)=>{
+routes.use(virify)
+routes.get('/',singleRout,async(req,res)=>{
     const data=await getmetod();
     res.json({
         massage:"succes",

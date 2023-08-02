@@ -1,6 +1,6 @@
 const express=require('express');
 const route=express.Router();
-const {saveData,getData,deletemethod,editeData,newdata}=require('../repository/data')
+const {saveData,getData,deletemethod,editeData,newdata}=require('../repository/data');
 
 route.get('/',(req,res)=>{
     res.render('from')
